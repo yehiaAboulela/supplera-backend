@@ -5,7 +5,7 @@ import initApp from "./src/app.router.js";
 import sendEmail from "./src/utils/email.js";
 const app = express();
 dotenv.config();
-const port = 3000;
+let port = 3000;
 
 initApp(app, express);
 
