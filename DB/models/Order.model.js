@@ -8,12 +8,8 @@ const orderSchema = Schema(
         productId: { type: Types.ObjectId, ref: "Product" },
         quantity: { type: Number, required: true },
         price: { type: Number, required: true },
-        src: { type: Array, required: true },
-        name: { type: String, required: true },
-        brand: String,
       },
     ],
-    totalAmount: { type: Number, required: true },
     status: {
       type: String,
       default: "Pending",

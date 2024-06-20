@@ -23,6 +23,7 @@ const productSchema = new Schema(
     reviwedByAdmin: { type: Boolean, default: false },
     reviwedByShipper: { type: Boolean, default: false },
     spam: { type: Boolean, default: false },
+    userTokent: String,
   },
   {
     toObject: { virtuals: true },

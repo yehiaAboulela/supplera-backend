@@ -10,7 +10,7 @@ export const profile = asyncHandler(async (req, res, next) => {
   const user = await userModel
     .findById(req.user._id)
     .select(
-      "_id timestamps firstName lastName phone email confirmEmail status"
+      "_id timestamps firstName lastName phone email confirmEmail status address"
     );
   return res.json({ message: "Done", user });
 });
