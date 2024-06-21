@@ -15,12 +15,12 @@ export const getUCategories = asyncHandler(async (req, res, next) => {
 
 export const newOrder = asyncHandler(async (req, res, next) => {
   console.log(req.body);
-  const { products, totalAmount } = req.body;
-  //   if (!req.body) return next(new Error("In-valid data", { cause: 400 }));
+  const { products, userToken } = req.body;
+  if (!req.body) return next(new Error("In-valid data", { cause: 400 }));
   const order = await orderModel.create({
     userId: req.user._id,
+    userToken,
     products,
-    totalAmount,
   });
   return res.status(201).json({ message: "Done", order });
 });
